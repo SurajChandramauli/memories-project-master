@@ -28,7 +28,7 @@ const initialState = {
 const Auth = () => {
   gapi.load("client:auth2", () => {
     gapi.client.init({
-      clientId: process.env.REACT_APP_GOOGLE_CLIENT_ID,
+      clientId: process.env.REACT_APP_CLIENT_ID,
       plugin_name: "chat",
     });
   });
@@ -133,8 +133,8 @@ const Auth = () => {
           >
             {isSignUp ? "Sign Up" : "Sign In"}
           </Button>
-          {/* <GoogleLogin
-            clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+          <GoogleLogin
+            clientId={process.env.REACT_APP_CLIENT_ID}
             render={(renderProps) => (
               <Button
                 className={classes.googleButton}
@@ -151,7 +151,7 @@ const Auth = () => {
             onSuccess={googleSuccess}
             onFailure={googleFailure}
             cookiePolicy="single_host_origin"
-          /> */}
+          />
           <Grid container justifyContent="flex-end">
             <Grid item>
               <Button onClick={switchMode}>
